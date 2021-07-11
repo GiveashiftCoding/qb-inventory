@@ -391,7 +391,7 @@ function handleDragDrop() {
             var itemData = $(this).data("item");
             var dragAmount = $("#item-amount").val();
             if (!itemData.useable) {
-                $("#item-use").css("background", "rgba(35,35,35, 0.5");
+                $("#item-use").css("background", "#00ADB5");
             }
 
             if ( dragAmount == 0) {
@@ -452,9 +452,9 @@ function handleDragDrop() {
             setTimeout(function(){
                 IsDragging = false;
             }, 300)
-            $(this).css("background", "rgba(235, 235, 235, 0.03)");
+            $(this).css("background", "#393E46");
             $(this).find("img").css("filter", "brightness(100%)");
-            $("#item-use").css("background", "rgba("+InventoryOption+", 0.3)");
+            $("#item-use").css("background", "#00ADB5");
         },
     });
 
@@ -611,6 +611,13 @@ function updateweights($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
         $("#other-inv-label").html(otherLabel)
         $("#other-inv-weight").html("Weight: " + (parseInt(totalWeightOther) / 1000).toFixed(2) + " / " + (otherMaxWeight / 1000).toFixed(2))
     }
+    $( "#player-inv-weight-bar" ).progressbar({
+        value: (totalWeight / 1000)
+    }); 
+
+    $( "#other-inv-weight-bar" ).progressbar({
+        value: (totalWeightOther / 1000)
+    }); 
 
     return true;
 }
@@ -1314,6 +1321,11 @@ var requiredItemOpen = false;
         } else {
             $(".other-inventory").attr("data-inventory", 0);
         }
+        $( "#player-inv-weight-bar" ).progressbar({
+            value: 0,
+            max: (data.maxweight / 1000)
+        });
+
         // First 5 Slots
         for(i = 1; i < 6; i++) {
             $(".player-inventory").append('<div class="item-slot" data-slot="' + i + '"><div class="item-slot-key"><p>' + i + '</p></div><div class="item-slot-img"></div><div class="item-slot-label"><p>&nbsp;</p></div></div>');
@@ -1328,6 +1340,7 @@ var requiredItemOpen = false;
         }
 
         if (data.other != null && data.other != "") {
+
             for(i = 1; i < (data.other.slots + 1); i++) {
                 $(".other-inventory").append('<div class="item-slot" data-slot="' + i + '"><div class="item-slot-img"></div><div class="item-slot-label"><p>&nbsp;</p></div></div>');
             }
@@ -1336,7 +1349,7 @@ var requiredItemOpen = false;
                 $(".other-inventory").append('<div class="item-slot" data-slot="' + i + '"><div class="item-slot-img"></div><div class="item-slot-label"><p>&nbsp;</p></div></div>');
             }
             $(".other-inventory .item-slot").css({
-                "background-color": "rgba(120, 10, 20, 0.05)"
+                "background-color": "#393E46"
             });
         }
 
@@ -1344,6 +1357,7 @@ var requiredItemOpen = false;
             $.each(data.inventory, function (i, item) {
                 if (item != null) {
                     totalWeight += (item.weight * item.amount);
+
                     var ItemLabel = '<div class="item-slot-label"><p>' + item.label + '</p></div>';
                     if ((item.name).split("_")[0] == "weapon") {
                         if (!Inventory.IsWeaponBlocked(item.name)) {
@@ -1391,6 +1405,10 @@ var requiredItemOpen = false;
         }
 
         $("#player-inv-weight").html("Weight: " + (totalWeight / 1000).toFixed(2) + " / " + (data.maxweight / 1000).toFixed(2));
+        $( "#player-inv-weight-bar" ).progressbar({
+            value: (totalWeight / 1000)
+        });
+
         playerMaxWeight = data.maxweight;
         if (data.other != null) 
         {
@@ -1409,6 +1427,10 @@ var requiredItemOpen = false;
             otherMaxWeight = Inventory.dropmaxweight;
             otherLabel = Inventory.droplabel;
         }
+        $( "#other-inv-weight-bar" ).progressbar({
+            value: (totalWeightOther / 1000),
+            max: (otherMaxWeight / 1000)
+        });
 
         $.each(data.maxammo, function(index, ammotype){
             $("#"+index+"_ammo").find('.ammo-box-amount').css({"height":"0%"});
