@@ -383,7 +383,8 @@ function handleDragDrop() {
         cancel: ".item-nodrag",
         start: function(event, ui) {
             IsDragging = true;
-           // $(this).css("background", "rgba(20,20,20,1.0)");
+            // Change this to change colour of hover when grabbing items in inventory
+           $(this).css("background", "linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(229,70,252,1) 100%)");
             $(this).find("img").css("filter", "brightness(50%)");
 
             $(".item-slot").css("border", "1px solid rgba(255, 255, 255, 0.1)")
@@ -391,7 +392,8 @@ function handleDragDrop() {
             var itemData = $(this).data("item");
             var dragAmount = $("#item-amount").val();
             if (!itemData.useable) {
-                $("#item-use").css("background", "#00ADB5");
+                // DONT KNOW WHAT THIS IS YET
+                $("#item-use").css("background", "linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(229,70,252,1) 100%)");
             }
 
             if ( dragAmount == 0) {
@@ -454,7 +456,8 @@ function handleDragDrop() {
             }, 300)
             $(this).css("background", "#393E46");
             $(this).find("img").css("filter", "brightness(100%)");
-            $("#item-use").css("background", "#00ADB5");
+            // This changes the USE button colour
+            $("#item-use").css("background", "linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(229,70,252,1) 100%)");
         },
     });
 
