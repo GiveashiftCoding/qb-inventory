@@ -23,7 +23,14 @@ p {
 }
 
 :root {
-    --main-label-color: 20, 10, 20;  
+    --main-label-color: rgb(0, 173, 181);
+    --main-weight-bar-color: rgb(0, 173, 181);
+    --main-weight-bg-color: rgb(34, 40, 49);
+    --main-weight-border-color: rgb(34, 40, 49);
+    --focus-item-color: rgb(0, 173, 181, 0.5);
+    --scrollbar-color: rgb(0, 173, 181);
+    --scrollbar-border-color: rgb(0, 173, 181);
+    --use-button-color: rgb(0, 173, 181);
 }
 
 /* rgb() */
@@ -41,7 +48,8 @@ input[type=number]::-webkit-outer-spin-button {
 /* Change the background colour to adjust the colour of the slider of inventory you can also add it as a gradient using https://cssgradient.io/ */
 ::-webkit-scrollbar-thumb
 {
-	background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(229,70,252,1) 100%);
+	background: rgb(2,0,36);
+    background: var(--scrollbar-color);
 	border-radius: 7px;
 }
 
@@ -75,8 +83,8 @@ body {
 }
 /* Change the background colour for the progressbar (weight bar) added in gradient using https://cssgradient.io/ */
 #player-inv-weight-bar {
-    background: #222831;
-    border: 1px solid #222831;
+    background: var(--main-weight-bg-color);
+    border: 1px solid var(--main-weight-border-color);
     position: absolute;
     top: 24.5%;
     left: 10.2%;
@@ -91,15 +99,16 @@ body {
 }
 /* Change the background colour for the progressbar (weight bar) added in gradient using https://cssgradient.io/ */
 #player-inv-weight-bar .ui-progressbar-value {
-    background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(229,70,252,1) 100%);
+    background: rgb(2,0,36);
+    background: var(--main-weight-bar-color);
     border: 1px solid #222831;
     height: 100%;
     max-height: 100%;
 }
 
 #other-inv-weight-bar {
-    background: #222831;
-    border: 1px solid #222831;
+    background: var(--main-weight-bg-color);
+    border: 1px solid var(--main-weight-border-color);
     position: absolute;
     top: 24.5%;
     right: 10.2%;
@@ -114,8 +123,8 @@ body {
 }
 /* Change the background colour for the progressbar (weight bar) added in gradient using https://cssgradient.io/ */
 #other-inv-weight-bar .ui-progressbar-value {
-    background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(229,70,252,1) 100%);
-    border: 1px solid #222831;
+    background: var(--main-weight-bar-color);
+    border: 1px solid var(--main-weight-border-color);
     height: 100%;
     max-height: 100%;
 }
@@ -157,8 +166,9 @@ body {
 /* Change the background colour to adjust the colour of the numbers on your hotbar of inventory you can also add it as a gradient using https://cssgradient.io/ */
 .player-inventory > .item-slot > .item-slot-key p {
     position: absolute;
-    background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(229,70,252,1) 100%);
+    background: var(--main-label-color);
     border-top-left-radius: 7px;
+    border-bottom-right-radius: 7px;
     color: #EEEEEE;
     padding: .3vh;
     padding-left: .5vh;
@@ -198,7 +208,7 @@ body {
     margin-left: 2px;
     margin-bottom: 2px;
     border-radius: 7px;
-    background-color: #393E46;
+    background-color: rgb(57, 62, 70, 0.9);
     border: 1px solid #222831;
     margin: 3px;
     transition: opacity 0.2s;
@@ -287,7 +297,7 @@ body {
 .inv-option-item {
     width: 80%;
     height: 50px;
-    background-color: #222831; /* rgba(20, 20, 20, 0.5) */
+    background-color: rgb(34, 40, 49, 0.9); /* rgba(20, 20, 20, 0.5) */
     border-radius: 15px;
     border: 1px solid #222831;
     color: #EEEEEE;
@@ -295,11 +305,12 @@ body {
 }
 
 .inv-option-item:hover {
-    background-color: #393E46; /* rgba(20, 20, 20, 0.5) */
+    background-color: rgb(57, 62, 70, 0.9); /* rgba(20, 20, 20, 0.5) */
 }
 
 #item-use {
-    background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(229,70,252,1) 100%);
+    background: rgb(2,0,36);
+background: var(--main-label-color);
     border: 1px solid #222831;
     height: 150px;
 }
@@ -355,7 +366,7 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: #222831;
+    background-color: rgb(34, 40, 49, 0.9);
     min-height: 3vh;
     height: auto;
 }
@@ -496,7 +507,7 @@ body {
     right: 0;
     width: 35vh;
     height: 23vh;
-    background: #222831;
+    background: rgb(34, 40, 49, 0.9);
 }
 /* Change the Font family to new imported font of your choice */
 .item-info-title {
@@ -549,7 +560,7 @@ body {
     width: 110px;
     height: 130px;
     border-radius: 7px;
-    background-color: #393E46;
+    background-color: rgb(57, 62, 70, 0.9);
     border: 1px solid #222831;
 }
 
@@ -573,7 +584,7 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: #222831;
+    background-color: rgb(34, 40, 49, 0.9);
     min-height: 2.2vh;
     height: fit-content;
 }
@@ -602,7 +613,7 @@ body {
     left: 42%;
     width: 110px;
     height: 130px;
-    background-color: #393E46;
+    background-color: rgb(57, 62, 70, 0.9);
     border-radius: 10px;
     border: 1px solid #222831;
     float: left;
@@ -614,7 +625,7 @@ body {
     left: 0;
     top: 0;
     border-radius: 10px 0 10px 0;
-    background-color: #00ADB5;
+    background-color: var(--main-label-color);
     color: #EEEEEE;
     padding: 3px;
     font-size: 10px;
@@ -625,7 +636,7 @@ body {
     position: absolute;
     bottom:0;
     width: 100%;
-    background-color: #222831;
+    background-color: rgb(34, 40, 49, 0.9);
     height: 21px;
 }
 
@@ -652,6 +663,7 @@ body {
     position: absolute;
     background: #00ADB5;
     border-top-left-radius: 7px;
+    border-bottom-right-radius: 7px;
     color: #EEEEEE;
     padding: .3vh;
     padding-left: .5vh;
@@ -670,7 +682,7 @@ body {
     margin-left: 2px;
     margin-bottom: 2px;
     border-radius: 7px;
-    background-color: #393E46;
+    background-color: rgb(57, 62, 70, 0.9);
     border: 1px solid #222831;
     margin: 3px;
     transition: opacity 0.2s;
@@ -693,7 +705,7 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: #222831;
+    background-color: rgb(34, 40, 49, 0.9);
     min-height: 2.2vh;
     height: fit-content;
 }

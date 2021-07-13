@@ -384,7 +384,7 @@ function handleDragDrop() {
         start: function(event, ui) {
             IsDragging = true;
             // Change this to change colour of hover when grabbing items in inventory
-           $(this).css("background", "linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(229,70,252,1) 100%)");
+           $(this).css("background", "var(--focus-item-color)");
             $(this).find("img").css("filter", "brightness(50%)");
 
             $(".item-slot").css("border", "1px solid rgba(255, 255, 255, 0.1)")
@@ -393,7 +393,7 @@ function handleDragDrop() {
             var dragAmount = $("#item-amount").val();
             if (!itemData.useable) {
                 // DONT KNOW WHAT THIS IS YET
-                $("#item-use").css("background", "linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(229,70,252,1) 100%)");
+                $("#item-use").css("background", "var(--focus-item-color)");
             }
 
             if ( dragAmount == 0) {
@@ -457,7 +457,7 @@ function handleDragDrop() {
             $(this).css("background", "#393E46");
             $(this).find("img").css("filter", "brightness(100%)");
             // This changes the USE button colour
-            $("#item-use").css("background", "linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(229,70,252,1) 100%)");
+            $("#item-use").css("background", "var(--use-button-color)");
         },
     });
 
