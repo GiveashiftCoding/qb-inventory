@@ -457,7 +457,7 @@ function handleDragDrop() {
             $(this).css("background", "#393E46");
             $(this).find("img").css("filter", "brightness(100%)");
             // This changes the USE button colour
-            $("#item-use").css("background", "var(--use-button-color)");
+            $("#item-use").css("background", "var(--button-use-color)");
         },
     });
 

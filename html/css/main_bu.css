@@ -1,4 +1,3 @@
-/* Import font URL's off https://fonts.google.com/ that you would like to use and past them below in the same format and URL structure */
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:600&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
@@ -6,7 +5,6 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
 
-/* Insert custom fonts below in the same format/structure and then you have successfuly installed a custom font to use within the inventory CSS */
 @font-face {
     font-family: 'Verdana';
     src: url('../verdana.ttf');
@@ -23,18 +21,7 @@ p {
 }
 
 :root {
-    --button-bg-color: rgb(0, 173, 181);
-    --button-border-color: rgb(0, 173, 181);
-    --button-use-color: rgb(0, 173, 181);
-    --main-label-color: rgb(0, 173, 181);
-    --main-weight-bar-color: rgb(0, 173, 181);
-    --main-weight-bg-color: rgb(34, 40, 49, 0.0);
-    --main-weight-border-color: rgb(34, 40, 49, 0.0);
-    --focus-item-color: rgb(0, 173, 181, 0.5);
-    --scrollbar-color: rgb(0, 173, 181);
-    --scrollbar-border-color: rgb(0, 173, 181);
-    --desc-bg-color: rgb(34, 40, 49, 0.9);
-    --desc-linebreak-color: rgb(0, 173, 181);
+    --main-label-color: 20, 10, 20;  
 }
 
 /* rgb() */
@@ -49,11 +36,10 @@ input[type=number]::-webkit-outer-spin-button {
 {
 	width: 4px;
 }
-/* Change the background colour to adjust the colour of the slider of inventory you can also add it as a gradient using https://cssgradient.io/ */
+
 ::-webkit-scrollbar-thumb
 {
-	background: rgb(2,0,36);
-    background: var(--scrollbar-color);
+	background-color: #00ADB5;
 	border-radius: 7px;
 }
 
@@ -68,7 +54,7 @@ body {
     left: 0vw;
     display: none;
 }
-/* Change background colour to adjust colour of ineventory solid colour (This has been set to be a solid colour so its not transparent) */
+
 .inv-background {
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
@@ -86,11 +72,12 @@ body {
     /* background-color: rgb(153, 147, 147); */
 }
 
-#player-inv-weight-bar, #other-inv-weight-bar {
-    background: var(--main-weight-bg-color);
-    border: 1px solid var(--main-weight-border-color);
+#player-inv-weight-bar {
+    background-color: #222831;
+    border: 1px solid #222831;
     position: absolute;
     top: 24.5%;
+    left: 10.2%;
     width: 31.5%;
     max-width: 31.5%;
     height: 1%;
@@ -101,18 +88,32 @@ body {
     z-index: 100;
 }
 
-#player-inv-weight-bar {
-    left: 10.2%;
+#player-inv-weight-bar .ui-progressbar-value {
+    background-color: #00ADB5;
+    border: 1px solid #00ADB5;
+    height: 100%;
+    max-height: 100%;
 }
 
 #other-inv-weight-bar {
+    background-color: #222831;
+    border: 1px solid #222831;
+    position: absolute;
+    top: 24.5%;
     right: 10.2%;
+    width: 31.5%;
+    max-width: 31.5%;
+    height: 1%;
+    max-height: 1%;
+    float: left;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    z-index: 100;
 }
 
-.ui-progressbar-value {
-    background: var(--main-weight-bar-color);
-    border-radius: 7px;
-    border: 1px solid var(--main-weight-border-color);
+#other-inv-weight-bar .ui-progressbar-value {
+    background-color: #00ADB5;
+    border: 1px solid #00ADB5;
     height: 100%;
     max-height: 100%;
 }
@@ -151,12 +152,11 @@ body {
     left: 35.5%;
     z-index: 105;
 }
-/* Change the background colour to adjust the colour of the numbers on your hotbar of inventory you can also add it as a gradient using https://cssgradient.io/ */
+
 .player-inventory > .item-slot > .item-slot-key p {
     position: absolute;
-    background: var(--main-label-color);
+    background: #00ADB5;
     border-top-left-radius: 7px;
-    border-bottom-right-radius: 7px;
     color: #EEEEEE;
     padding: .3vh;
     padding-left: .5vh;
@@ -196,7 +196,7 @@ body {
     margin-left: 2px;
     margin-bottom: 2px;
     border-radius: 7px;
-    background-color: rgb(57, 62, 70, 0.9);
+    background-color: #393E46;
     border: 1px solid #222831;
     margin: 3px;
     transition: opacity 0.2s;
@@ -245,7 +245,6 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.01);
     top: 2vh;
 }
-/* Change the Font family to new imported font of your choice */
 .ammo-info-header {
     /* background-color: rgba(5, 5, 5, 0.5); */
     width: 100%;
@@ -256,7 +255,6 @@ body {
     padding: .4vh;
     text-align: center;
 }
-/* Change the Font family to new imported font of your choice */
 .ammo-info {
     position: relative;
     color: white;
@@ -272,7 +270,7 @@ body {
     margin-right: 1vh;
     float: right;
 }
-/* Change the Font family to new imported font of your choice */
+
 .inv-option-item > p {
     color: #EEEEEE;
     text-align: center;
@@ -285,7 +283,7 @@ body {
 .inv-option-item {
     width: 80%;
     height: 50px;
-    background-color: rgb(34, 40, 49, 0.9); /* rgba(20, 20, 20, 0.5) */
+    background-color: #222831; /* rgba(20, 20, 20, 0.5) */
     border-radius: 15px;
     border: 1px solid #222831;
     color: #EEEEEE;
@@ -293,12 +291,12 @@ body {
 }
 
 .inv-option-item:hover {
-    background-color: rgb(57, 62, 70, 0.9); /* rgba(20, 20, 20, 0.5) */
+    background-color: #393E46; /* rgba(20, 20, 20, 0.5) */
 }
 
 #item-use {
-    background: var(--button-bg-color);
-    border: 1px solid var(--button-border-color);
+    background-color: #00ADB5;
+    border: 1px solid #00ADB5;
     height: 150px;
 }
 
@@ -321,7 +319,7 @@ body {
     color: white;
     transition: background-color .1s linear;
 }
-/* Change the Font family to new imported font of your choice */
+
 .btn-combine > p {
     color: white;
     text-align: center;
@@ -353,11 +351,11 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: rgb(34, 40, 49, 0.9);
+    background-color: #222831;
     min-height: 3vh;
     height: auto;
 }
-/* Change the Font family to new imported font of your choice */
+
 .item-slot-label p {
     color: #EEEEEE;
     border-top: 1px solid #222831;
@@ -388,7 +386,7 @@ body {
     z-index: 1;
     box-shadow: inset 0 0 .25vh 0 rgba(0, 0, 0, 0.2);
 }
-/* Change the Font family to new imported font of your choice */
+
 .item-slot-quality p {
     color: rgb(247, 247, 247);
     font-size: .8vh;
@@ -425,7 +423,7 @@ body {
     left: 10.3%;
     top: 19.5%;
 }
-/* Change the Font family to new imported font of your choice */
+
 #player-inv-label {
     position: relative;
     color: white;
@@ -437,7 +435,7 @@ body {
     float: left;
     text-transform: uppercase;
 }
-/* Change the Font family to new imported font of your choice */
+
 #player-inv-weight {
     color: white;
     font-size: 11px;
@@ -445,7 +443,7 @@ body {
     letter-spacing: 0.1vh;
     float: left;
 }
-/* Change the Font family to new imported font of your choice */
+
 #other-inv-label {
     position: relative;
     color: white;
@@ -457,7 +455,7 @@ body {
     float: left;
     text-transform: uppercase;
 }
-/* Change the Font family to new imported font of your choice */
+
 #other-inv-weight {
     color: white;
     font-size: 11px;
@@ -471,7 +469,7 @@ body {
     left: 38%;
     top: 12%;
 }
-/* Change the Font family to new imported font of your choice */
+
 .player-inv-weight p {
     color: white;
     font-size: 12px;
@@ -483,9 +481,8 @@ body {
     left: 58.3%;
     top: 19.5%;
 }
-/* Change the Font family to new imported font of your choice */
+
 .ply-iteminfo-container {
-    border-radius: 7px;
     font-family: 'Open Sans';
     display: none;
     position: absolute;
@@ -495,35 +492,32 @@ body {
     right: 0;
     width: 35vh;
     height: 23vh;
-    background: var(--desc-bg-color);
+    background: #222831;
 }
-/* Change the Font family to new imported font of your choice */
+
 .item-info-title {
     font-family: sans-serif;
     font-size: 1.8vh;
     color: #EEEEEE;
     font-family: 'Open Sans';
-    padding: 1vh;
-    text-align: center;
+    padding-top: 5px;
+    padding-left: 5px;
 }
-/* Change the Font family to new imported font of your choice */
+
 .item-info-line {
     position: absolute;
     font-family: 'Open Sans';
-    margin: 0 5%;
-    width: 90%;
-    background-color: var(--desc-linebreak-color);
-    height: .2vh;
+    width: 100%;
+    background-color: #00ADB5;
+    height: .1vh;
     top: 4.5vh;
 }
-/* Change the Font family to new imported font of your choice */
+
 .item-info-description {
     font-size: 1.1vh;
     font-family: 'Open Sans';
-    margin: 0 5%;
-    width: 90%;
     color: #EEEEEE;
-    padding-top: 2vh;
+    padding-top: 3vh;
     padding-left: .5vh;
 }
 
@@ -551,7 +545,7 @@ body {
     width: 110px;
     height: 130px;
     border-radius: 7px;
-    background-color: rgb(57, 62, 70, 0.9);
+    background-color: #393E46;
     border: 1px solid #222831;
 }
 
@@ -575,11 +569,11 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: rgb(34, 40, 49, 0.9);
+    background-color: #222831;
     min-height: 2.2vh;
     height: fit-content;
 }
-/* Change the Font family to new imported font of your choice */
+
 #itembox-label > p {
     color: #EEEEEE;
     font-size: 11.5px;
@@ -604,19 +598,19 @@ body {
     left: 42%;
     width: 110px;
     height: 130px;
-    background-color: rgb(57, 62, 70, 0.9);
+    background-color: #393E46;
     border-radius: 10px;
     border: 1px solid #222831;
     float: left;
     margin-left: 20px;
 }
-/* Change the Font family to new imported font of your choice */
+
 #requiredItem-action {
     position: absolute;
     left: 0;
     top: 0;
     border-radius: 10px 0 10px 0;
-    background-color: var(--main-label-color);
+    background-color: #00ADB5;
     color: #EEEEEE;
     padding: 3px;
     font-size: 10px;
@@ -627,7 +621,7 @@ body {
     position: absolute;
     bottom:0;
     width: 100%;
-    background-color: rgb(34, 40, 49, 0.9);
+    background-color: #222831;
     height: 21px;
 }
 
@@ -649,12 +643,11 @@ body {
     width: fit-content;
     z-index: 105;
 }
-/* Change the Font family to new imported font of your choice */
+
 .z-hotbar-inventory > .z-hotbar-item-slot > .z-hotbar-item-slot-key p {
     position: absolute;
     background: #00ADB5;
     border-top-left-radius: 7px;
-    border-bottom-right-radius: 7px;
     color: #EEEEEE;
     padding: .3vh;
     padding-left: .5vh;
@@ -673,7 +666,7 @@ body {
     margin-left: 2px;
     margin-bottom: 2px;
     border-radius: 7px;
-    background-color: rgb(57, 62, 70, 0.9);
+    background-color: #393E46;
     border: 1px solid #222831;
     margin: 3px;
     transition: opacity 0.2s;
@@ -696,11 +689,11 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: rgb(34, 40, 49, 0.9);
+    background-color: #222831;
     min-height: 2.2vh;
     height: fit-content;
 }
-/* Change the Font family to new imported font of your choice */
+
 .z-hotbar-item-slot-label p {
     color: #EEEEEE;
     font-size: 11.5px;
@@ -767,7 +760,7 @@ body {
     width: 5.25vh;
     opacity: .25;
 }
-/* Change the Font family to new imported font of your choice */
+
 .ammo-box > span {
     position: absolute;
     color: rgba(255, 255, 255, 0.95);
@@ -811,7 +804,7 @@ body {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
 }
-/* Change the Font family to new imported font of your choice */
+
 .weapon-attachments-container-title {
     position: absolute;
     margin: 5vh;
@@ -819,7 +812,7 @@ body {
     color: rgb(255, 255, 255);
     font-family: 'Source Sans Pro';
 }
-/* Change the Font family to new imported font of your choice */
+
 .weapon-attachments-container-description {
     position: absolute;
     margin: 5vh;
@@ -828,7 +821,7 @@ body {
     color: rgba(255, 255, 255, 0.8);
     font-family: 'Source Sans Pro';
 }
-/* Change the Font family to new imported font of your choice */
+
 .weapon-attachments-container-details {
     position: absolute;
     margin: 5vh;
@@ -901,7 +894,7 @@ body {
     background-color: rgba(var(--main-label-color), 0.3);
     padding: 2.1%;
 }
-/* Change the Font family to new imported font of your choice */
+
 .weapon-attachment-label > p {
     color: #ffffff;
     font-size: 1.1vh;
@@ -975,7 +968,7 @@ body {
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
-/* Change the Font family to new imported font of your choice */
+
 .weapon-attachments-back {
     position: absolute;
     bottom: 0;
