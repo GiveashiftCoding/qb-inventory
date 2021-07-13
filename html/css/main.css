@@ -5,6 +5,7 @@
 @import url('https://fonts.googleapis.com/css?family=Balthazar&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 /* Insert custom fonts below in the same format/structure and then you have successfuly installed a custom font to use within the inventory CSS */
 @font-face {
@@ -17,6 +18,10 @@
     src: url('../VerdanaBold.ttf');
 }
 
+@font-face {
+    font-family: 'Montserrat', sans-serif;
+    src:url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+}
 
 p {
     margin: 0 !important;
@@ -165,7 +170,8 @@ body {
     text-align: left;
     font-size: 1.1vh;
     line-height: 1.8vh;
-    font-family: 'Verdana Bold'
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
 }
 
 .inv-options {
@@ -231,7 +237,8 @@ body {
     color: #EEEEEE;
     text-align: center;
     font-size: 1.25vh;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
     outline: none;
 }
 
@@ -307,6 +314,11 @@ body {
     color: #EEEEEE;
 }
 
+#item-use > p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+}
+
 #item-hand {
     position: relative;
     left: 25px;
@@ -346,6 +358,8 @@ body {
     color: #ffffff;
     text-align: right;
     font-size: 11px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
@@ -365,9 +379,8 @@ body {
     font-size: .99vh;
     line-height: 1.8vh;
     text-align: center;
-
-    font-family: Verdana;
-
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
 }
 
 .item-slot-quality {
@@ -431,8 +444,8 @@ body {
     position: relative;
     color: white;
     font-size: 20px;
-    font-family: 'Lato', monospace;
-    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
     letter-spacing: 0.1vh;
     bottom: 0px;
     float: left;
@@ -442,7 +455,8 @@ body {
 #player-inv-weight {
     color: white;
     font-size: 11px;
-    font-family: 'Lato', monospace;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     letter-spacing: 0.1vh;
     float: left;
 }
@@ -451,8 +465,8 @@ body {
     position: relative;
     color: white;
     font-size: 20px;
-    font-family: 'Lato', monospace;
-    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
     letter-spacing: 0.1vh;
     bottom: 0px;
     float: left;
@@ -462,7 +476,8 @@ body {
 #other-inv-weight {
     color: white;
     font-size: 11px;
-    font-family: 'Lato', monospace;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     letter-spacing: 0.1vh;
     float: left;
 }
@@ -487,7 +502,7 @@ body {
 /* Change the Font family to new imported font of your choice */
 .ply-iteminfo-container {
     border-radius: 7px;
-    font-family: 'Open Sans';
+    font-family: 'Montserrat', sans-serif;
     display: none;
     position: absolute;
     bottom: 3%;
@@ -503,14 +518,15 @@ body {
     font-family: sans-serif;
     font-size: 1.8vh;
     color: #EEEEEE;
-    font-family: 'Open Sans';
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
     padding: 1vh;
     text-align: center;
 }
 /* Change the Font family to new imported font of your choice */
 .item-info-line {
     position: absolute;
-    font-family: 'Open Sans';
+    font-family: 'Montserrat', sans-serif;
     margin: 0 5%;
     width: 90%;
     background-color: var(--desc-linebreak-color);
@@ -520,7 +536,8 @@ body {
 /* Change the Font family to new imported font of your choice */
 .item-info-description {
     font-size: 1.1vh;
-    font-family: 'Open Sans';
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
     margin: 0 5%;
     width: 90%;
     color: #EEEEEE;
@@ -569,7 +586,8 @@ body {
 
 #itembox-action > p {
     font-size: 10px;
-    font-family: 'Verdana Bold';
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
 }
 
 #itembox-label {
@@ -588,8 +606,8 @@ body {
     text-align: center;
     text-transform: lowercase;
     border-top: 1px solid #222831;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-variant: small-caps;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
 }
 
 .requiredItem-container {
@@ -621,7 +639,8 @@ body {
     color: var(--label-text-color);
     padding: 3px;
     font-size: 10px;
-    font-family: 'Verdana Bold';
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
 }
 
 #requiredItem-label {
@@ -638,6 +657,8 @@ body {
     text-align: center;
     text-transform: uppercase;
     line-height: 19px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
 }
 
 .z-hotbar-inventory {
